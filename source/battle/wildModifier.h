@@ -12,6 +12,7 @@ Result getCurrentPokemon(PK6* out);
 void setCurrentPokemon(PK6* in);
 
 void makeShiny(PK6* pk6);
+void makePerfect(PK6* pk6);
 void setIV(PK6* pk6, Stats s, u8 amount);
 
 void setAutomaticCatchSuccess();

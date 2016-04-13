@@ -62,6 +62,17 @@ void makeShiny(PK6* pk6)
 	pk6->PID = (pk6->PID & 0x000FFFFF) | (s_xor << 16);
 }
 
+void makePerfect(PK6* pk6)
+{
+	setIV(pk6, ATTACK, 31);
+	setIV(pk6, DEFENSE, 31);
+	setIV(pk6, SPEED, 31);
+	setIV(pk6, SP_ATTACK, 31);
+	setIV(pk6, SP_DEFENSE, 31);
+	setIV(pk6, HP, 31);
+	
+}
+
 void setIV(PK6* pk6, Stats s, u8 amount)
 {
 	if(amount > 31) return;

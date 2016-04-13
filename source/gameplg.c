@@ -37,6 +37,7 @@ enum menuEntrysEnum
 		entryEncounterRandomize,
 		entryEncounterItem,
 		entryEncounterShiny,
+		entryEncounterPerfect,
 	headerVariation,
 		entryVariationRandomize,
 		entryVariationItem,
@@ -75,6 +76,7 @@ void initCheatMenu() {
 	addOrCheatMenuEntry(" Random(only unseen)");
 	addOrCheatMenuEntry(" First item count");
 	addCheatMenuEntry(" Shiny Pokemon");
+	addCheatMenuEntry(" Perfect Pokemon");
 	
 	addMenuEntry("Wild Encounter variation modifier");
 	addOrCheatMenuEntry(" Random");
@@ -355,6 +357,16 @@ void handleCheats()
 		if(getCurrentPokemon(&pkm) && !isShiny(&pkm))
 		{
 			makeShiny(&pkm);
+			setCurrentPokemon(&pkm);
+		}
+	}
+	
+	if(cheatEnabled[entryEncounterPerfect])
+	{
+		PK6 pkm;
+		if(getCurrentPokemon(&pkm))
+		{
+			makePerfect(&pkm);
 			setCurrentPokemon(&pkm);
 		}
 	}
